@@ -24,10 +24,17 @@ DB/Login - Employee users and time database. Register and login users. Credentia
 WebSocket - As each user clocks in and out, it is broadcasted to all the users. 
 
 Key features
+
 Secure login over HTTPS
+
 Ability to record time of clock in/out
+
 Display of other users time stamps
+
 Ability to see your pay
+
 Totals all the pay you've made so far
+
 Ability for see their money real time
+
 Time stamps and pay are persistently stored
