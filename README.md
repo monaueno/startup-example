@@ -39,7 +39,7 @@ Ability for see their money real time
 
 Time stamps and pay are persistently stored
 
-![payroll sheet.](<img width="876" alt="timeclock" src="https://github.com/user-attachments/assets/50c322fe-1692-462e-8cb3-c76fcb918aea">
-)
+![payroll sheet.]([<img width="876" alt="timeclock" src="https://github.com/user-attachments/assets/50c322fe-1692-462e-8cb3-c76fcb918aea"](https://github.com/user-attachments/assets/cd7e7a59-80fc-4ea7-8399-28d9719b356a)
+
 
 ![timeclock sheet](https://drive.google.com/file/d/16H4cPB60FR1T4xm7OngZohLvI6GiSFru/view?usp=sharing)
