@@ -6,7 +6,7 @@ As a college student, there are many bills I need to pay such as rent, student l
 
 # Here are the 7 technologies I need to use:
 
-** HTML - ** Uses correct HTML structure for application. Three HTML pages. One for login, one for clocking in, and one for the page after you pay roll. 
+**HTML -** Uses correct HTML structure for application. Three HTML pages. One for login, one for clocking in, and one for the page after you pay roll. 
 
 CSS - Application styling that looks good on different screen sizes, uses good whitespace, color choice and contrast.
 
