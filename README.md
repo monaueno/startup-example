@@ -6,12 +6,18 @@ As a college student, there are many bills I need to pay such as rent, student l
 Here are the 7 technologies I need to use:
 
 HTML - Uses correct HTML structure for application. Three HTML pages. One for login, one for clocking in, and one for the page after you pay roll. 
+
 CSS - Application styling that looks good on different screen sizes, uses good whitespace, color choice and contrast.
+
 JavaScript - Provides login, clock display, shows the pay, display other users clock in schedules.
+
 React - Single page application with views componentized and reactive to user's actions.
+
 Service - Backend service with endpoints for:
 retreiving time
 submitting pay
 retrieving time status
+
 DB/Login - Employee users and time database. Register and login users. Credentials securely stored in database. Can't clock in/out unless authenticated.
+
 WebSocket - As each user clocks in and out, it is broadcasted to all the users. 
