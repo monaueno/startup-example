@@ -42,4 +42,4 @@ Time stamps and pay are persistently stored
 ![payroll sheet.](https://github.com/user-attachments/assets/cd7e7a59-80fc-4ea7-8399-28d9719b356a)
 
 
-![timeclock sheet](https://drive.google.com/file/d/16H4cPB60FR1T4xm7OngZohLvI6GiSFru/view?usp=sharing)
+![timeclock sheet](https://github.com/user-attachments/assets/709d0a92-f3d0-430d-855f-a962c0784193)
