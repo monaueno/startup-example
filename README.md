@@ -38,3 +38,5 @@ retrieving time status
 Ability for see their money real time
 
 Time stamps and pay are persistently stored
+
+![payroll sheet.] (https://drive.google.com/file/d/1L0JD-7QSrdFW2sw76Br8J1Z1Wgxt7HYG/view?usp=sharing)
