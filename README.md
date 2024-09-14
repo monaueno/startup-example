@@ -22,5 +22,3 @@ DB/Login - Employee users and time database. Register and login users. Credentia
 
 WebSocket - As each user clocks in and out, it is broadcasted to all the users. 
 
-[Uploading timeclockpage.pdf…]()
-[Uploading payrollpage.pdf…]()
