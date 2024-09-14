@@ -15,4 +15,4 @@ submitting votes
 retrieving vote status
 displayed a random dog picture using the https://dog.ceo/api/breeds/image/random service.
 DB/Login - Store users, choices, and votes in database. Register and login users. Credentials securely stored in database. Can't vote unless authenticated.
-WebSocket - As each user votes, their votes are broadcast to all other users. also... 
+WebSocket - As each user votes, their votes are broadcast to all other users. 
