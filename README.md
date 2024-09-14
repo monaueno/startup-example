@@ -1,10 +1,10 @@
-## Mona Ueno
+# Mona Ueno
 
-### TodayPay!
+## TodayPay!
 
 As a college student, there are many bills I need to pay such as rent, student loans, groceries, etc; however, I only receive my paycheck every two weeks, making it hard to pay these bills on time. TodayPay would be partnered with companies to help fix this problem! TodayPay is a time clock app where it allows employees to clock in and out, then are able to see and get their money in real time! With a sleek and easy design to clock in and out, this will improve the productivity of employees and stimulate positive reinforcement. 
 
-#### Here are the 7 technologies I need to use:
+### Here are the 7 technologies I need to use:
 
 **HTML -** Uses correct HTML structure for application. Three HTML pages. One for login, one for clocking in, and one for the page after you pay roll. 
 
@@ -23,7 +23,7 @@ retrieving time status
 
 **WebSocket -** As each user clocks in and out, it is broadcasted to all the users. 
 
-#### Key features
+### Key features
 
 -Secure login over HTTPS
 
