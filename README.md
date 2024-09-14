@@ -23,7 +23,7 @@ retrieving time status
 
 **WebSocket -** As each user clocks in and out, it is broadcasted to all the users. 
 
-####Key features
+#### Key features
 
 -Secure login over HTTPS
 
