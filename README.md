@@ -39,6 +39,6 @@ Ability for see their money real time
 
 Time stamps and pay are persistently stored
 
-![payroll sheet.](https://acrobat.adobe.com/link/review/?x_api_client_id=adobe_com&x_api_client_location=compress_pdf&viewer!megaVerb=group-discover&uri=urn:aaid:scds:US:0RcABYFfSvmPcvpqLgyc3A&dropinId=verb-pdf-to-image)
+![payroll sheet.](https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:2f175213-6205-4d09-b3e9-0211bd0ca2a6)
 
 ![timeclock sheet.](https://drive.google.com/file/d/16H4cPB60FR1T4xm7OngZohLvI6GiSFru/view?usp=sharing)
