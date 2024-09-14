@@ -39,7 +39,9 @@ Ability for see their money real time
 
 Time stamps and pay are persistently stored
 
+## **Pay Roll Screen Rough Draft**
+
 ![payroll sheet.](https://github.com/user-attachments/assets/cd7e7a59-80fc-4ea7-8399-28d9719b356a)
 
-
+## **Time Clock Screen Rough Draft**
 ![timeclock sheet](https://github.com/user-attachments/assets/709d0a92-f3d0-430d-855f-a962c0784193)
