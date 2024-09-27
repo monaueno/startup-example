@@ -5,11 +5,9 @@
   <nav>
     <menu>
       <li>
-        ::marker
       <a href="index.html">Log In</a>
       </li>
       <li>
-        ::marker
         <a href="clockin.html">Clock In</a>
       </li>
       <li>
