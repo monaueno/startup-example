@@ -1,5 +1,4 @@
 <html lang="en">
-<head>
 <header>
   <h1>TodayPay!</h1>
   <nav>
@@ -18,6 +17,7 @@
       </li>
     </menu>
   </nav>
+  <body>
 
 </header>
 
@@ -35,3 +35,11 @@
 </form>
 </main>
 
+<footer>
+  <hr>
+  <span class="text-reset">Mona Ueno</span>
+  <br>
+  <a href="https://github.com/monaueno">Github</a>
+</footer>
+</body>
+</html>
