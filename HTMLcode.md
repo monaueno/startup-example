@@ -25,9 +25,11 @@
 <main>
 <form method="get" action="clockin.html">
 <div>
+  <span>*</span>
   <input type="text" placeholder="your@email.com">
 </div>
 <div>
+  <span>*</span>
   <input type="text" placeholder="password">
 </div>
 <button type="submit">Login</button>
