@@ -23,7 +23,7 @@
 
 <main>
 <h1>Get Paid Today!</h1>
-<form method="get" actioin="play.html">
+<form method="get" action="play.html">
 <div>
   <input type="text" placeholder="your@email.com">
 </div>
