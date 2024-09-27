@@ -21,9 +21,9 @@
 
 </header>
 
-<main>
 <h1>Get Paid Today!</h1>
-<form method="get" action="play.html">
+<main>
+<form method="get" action="clockin.html">
 <div>
   <input type="text" placeholder="your@email.com">
 </div>
