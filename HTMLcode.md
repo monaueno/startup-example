@@ -21,3 +21,17 @@
 
 </header>
 
+<main>
+<h1>Get Paid Today!</h1>
+<form method="get" actioin="play.html">
+<div>
+  <input type="text" placeholder="your@email.com">
+</div>
+<div>
+  <input type="text" placeholder="password">
+</div>
+<button type="submit">Login</button>
+<button type="submit">Create</button>
+</form>
+</main>
+
