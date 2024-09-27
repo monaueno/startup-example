@@ -1,4 +1,25 @@
 <html lang="en">
 <head>
-<title>TodayPay!</title>
+<header>
+  <h1>TodayPay!</h1>
+  <nav>
+    <menu>
+      <li>
+        ::marker
+      <a href="index.html">Log In</a>
+      </li>
+      <li>
+        ::marker
+        <a href="clockin.html">Clock In</a>
+      </li>
+      <li>
+        <a href="mypay.html">My Pay</a>
+      </li>
+      <li>
+        <a href="profile.html">Profile</a>
+      </li>
+    </menu>
+  </nav>
+
+</header>
 
