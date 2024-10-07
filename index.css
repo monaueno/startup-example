@@ -7,7 +7,14 @@ body {
   }
   
   header {
-    flex: 0 80px;
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100px; /* Set width as desired */
+    height: 30px; /* Set height as desired */
+    background-color: white; /* Optional: background color */
+    padding: 5px; /* Optional: padding for content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
   }
   
   main {
