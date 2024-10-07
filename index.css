@@ -2,6 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
+    font-family: 'Roboto', Sans-Serif;
+    font-weight: 300;
   }
   
   header {
