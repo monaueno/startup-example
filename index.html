@@ -1,47 +1,47 @@
+<!DOCTYPE html>
 <html lang="en">
-<header>
-  <h1>TodayPay!</h1>
-  <nav>
-    <menu>
-      <li>
-      <a href="index.html">Log In</a>
-      </li>
-      <li>
-        <a href="clockin.html">Clock In</a>
-      </li>
-      <li>
-        <a href="mypay.html">My Pay</a>
-      </li>
-      <li>
-        <a href="profile.html">Profile</a>
-      </li>
-    </menu>
-  </nav>
-  <body>
 
-</header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodayPay!</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
 
-<h1>Get Paid Today!</h1>
-<main>
-<form method="get" action="clockin.html">
-<div>
-  <span>*</span>
-  <input type="text" placeholder="your@email.com">
-</div>
-<div>
-  <span>*</span>
-  <input type="text" placeholder="password">
-</div>
-<button type="submit">Login</button>
-<button type="submit">Create</button>
-</form>
-</main>
+<body>
+    <header>
+        <h1>TodayPay!</h1>
+    </header>
 
-<footer>
-  <hr>
-  <span class="text-reset">Mona Ueno</span>
-  <br>
-  <a href="https://github.com/monaueno">Github</a>
-</footer>
+    <main>
+        <h1>Get Paid Today!</h1>
+        <form method="get" action="clockin.html">
+            <div>
+                <label for="email">Email <span>*</span></label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div>
+                <label for="password">Password <span>*</span></label>
+                <input type="password" id="password" name="password" placeholder="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <button type="button" onclick="location.href='create.html'">Create</button>
+        </form>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Log In</a></li>
+                <li><a href="clockin.html">Clock In</a></li>
+                <li><a href="mypay.html">My Pay</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <span class="text-reset">Mona Ueno</span><br>
+        <a href="https://github.com/monaueno">Github</a>
+    </footer>
 </body>
+
 </html>
