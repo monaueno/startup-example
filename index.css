@@ -13,13 +13,13 @@ body {
 }
 
 header {
-  background-color: blue; /* Blue background for the header */
+  background-color: #6A8EAE; /* Blue background for the header */
   color: white; /* Text color for better contrast */
   padding: 10px; /* Padding for header */
 }
 
 header h1 {
-  font-size: 24px; /* Size of the title */
+  font-size: 32px; /* Size of the title */
   margin-bottom: 5px; /* Space between title and nav */
 }
 
@@ -40,9 +40,10 @@ nav li {
 nav a {
   color: white; /* Text color for links */
   text-decoration: none; /* Remove underline */
-  padding: 8px 12px; /* Padding for the links */
+  padding: 5px 12px; /* Padding for the links */
   border-radius: 5px; /* Rounded corners */
   transition: background-color 0.3s; /* Smooth background change */
+  font-size: 20px;
 }
 
 nav a:hover {
