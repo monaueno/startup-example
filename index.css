@@ -1,7 +1,7 @@
-*{
+* {
   margin: 0; /* Remove default margin from all elements */
-padding: 0; /* Remove default padding from all elements */
-box-sizing: border-box;
+  padding: 0; /* Remove default padding from all elements */
+  box-sizing: border-box;
 }
 
 body {
@@ -10,29 +10,47 @@ body {
   min-width: 375px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  position: relative; /* Ensure body is the positioning context */
 }
 
 header {
-  position: absolute; /* Absolute positioning */
-  top: 0; /* Align to the top */
-  left: 5px; /* Align to the left */
-  width: 100px; /* Set width as desired */
-  height: 40px; /* Set height as desired */
-  background-color: white; /* Background color for contrast */
-  display: flex; /* Flexbox to align content */
-  flex-direction: column;
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
+  background-color: blue; /* Blue background for the header */
+  color: white; /* Text color for better contrast */
+  padding: 10px; /* Padding for header */
 }
 
 header h1 {
-  font-size: 20px; /* Adjust font size for the header */
-  margin: 0; /* Remove default margin */
+  font-size: 24px; /* Size of the title */
+  margin-bottom: 5px; /* Space between title and nav */
+}
+
+nav {
+  display: flex;
+  justify-content: center; /* Center the navigation */
+}
+
+nav ul {
+  display: flex; /* Use flexbox for the menu */
+  list-style: none; /* Remove bullet points */
+}
+
+nav li {
+  margin: 0 15px; /* Space between menu items */
+}
+
+nav a {
+  color: white; /* Text color for links */
+  text-decoration: none; /* Remove underline */
+  padding: 8px 12px; /* Padding for the links */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth background change */
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Change on hover */
 }
 
 main {
-  flex: 1 calc(100vh - 40px); /* Adjusted for new header height */
+  flex: 1; /* Main content takes remaining space */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,26 +59,6 @@ main {
 
 footer {
   flex: 0 30px;
-}
-
-menu {
-  flex: 1;
-  display: flex;
-  flex-direction: row !important;
-  list-style: none;
-}
-
-.navbar-brand {
-  padding-left: 0.3em;
-  border-bottom: solid rgb(182, 182, 182) thin;
-}
-
-menu .nav-item {
-  padding: 0 0.3em;
-}
-
-footer a {
-  float: right;
 }
 
 @media (max-height: 600px) {
