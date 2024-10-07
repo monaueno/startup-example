@@ -1,64 +1,76 @@
+*{
+  margin: 0; /* Remove default margin from all elements */
+padding: 0; /* Remove default padding from all elements */
+box-sizing: border-box;
+}
+
 body {
-    display: flex;
-    flex-direction: column;
-    min-width: 375px;
-    font-family: 'Roboto', Sans-Serif;
-    font-weight: 300;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  position: relative; /* Ensure body is the positioning context */
+}
+
+header {
+  position: absolute; /* Absolute positioning */
+  top: 0; /* Align to the top */
+  left: 5px; /* Align to the left */
+  width: 100px; /* Set width as desired */
+  height: 40px; /* Set height as desired */
+  background-color: white; /* Background color for contrast */
+  display: flex; /* Flexbox to align content */
+  flex-direction: column;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+}
+
+header h1 {
+  font-size: 20px; /* Adjust font size for the header */
+  margin: 0; /* Remove default margin */
+}
+
+main {
+  flex: 1 calc(100vh - 40px); /* Adjusted for new header height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer {
+  flex: 0 30px;
+}
+
+menu {
+  flex: 1;
+  display: flex;
+  flex-direction: row !important;
+  list-style: none;
+}
+
+.navbar-brand {
+  padding-left: 0.3em;
+  border-bottom: solid rgb(182, 182, 182) thin;
+}
+
+menu .nav-item {
+  padding: 0 0.3em;
+}
+
+footer a {
+  float: right;
+}
+
+@media (max-height: 600px) {
   header {
-    position: absolute; /* Absolute positioning */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    width: 100px; /* Set width as desired */
-    height: 30px; /* Set height as desired */
-    background-color: white; /* Optional: background color */
-    padding: 5px; /* Optional: padding for content */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+      display: none; /* Optionally hide header on small screens */
   }
-  
-  main {
-    flex: 1 calc(100vh - 110px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
-  
   footer {
-    flex: 0 30px;
-  }
-  
-  menu {
-    flex: 1;
-    display: flex;
-    /*  overwrite Bootstrap so the menu does not wrap */
-    flex-direction: row !important;
-    list-style: none;
-  }
-  
-  .navbar-brand {
-    padding-left: 0.3em;
-    border-bottom: solid rgb(182, 182, 182) thin;
-  }
-  
-  menu .nav-item {
-    padding: 0 0.3em;
-  }
-  
-  footer a {
-    float: right;
-  }
-  
-  @media (max-height: 600px) {
-    header {
       display: none;
-    }
-    footer {
-      display: none;
-    }
-    main {
+  }
+  main {
       flex: 1 100vh;
-    }
   }
-  
+}
