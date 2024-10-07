@@ -50,6 +50,12 @@ nav a:hover {
   background-color: rgba(255, 255, 255, 0.2); /* Change on hover */
 }
 
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.3); /* Keep the hover effect */
+  padding: 8px 12px; /* Same padding as hover state */
+  border-radius: 5px;
+}
+
 main {
   flex: 1; /* Main content takes remaining space */
   display: flex;
