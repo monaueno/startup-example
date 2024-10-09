@@ -7,71 +7,67 @@
     <title>TodayPay!</title>
     <link rel="stylesheet" type="text/css" href="clockin.css">
 </head>
+
 <header>
-  <h1>TodayPay!</h1>
-  <nav>
-      <ul>
-          <li><a href="index.html">Log In</a></li>
-          <li><a href="clockin.html" class="active">Clock In</a></li>
-          <li><a href="mypay.html">My Pay</a></li>
-          <li><a href="profile.html">Profile</a></li>
-      </ul>
-  </nav>
+    <h1>TodayPay!</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Log In</a></li>
+            <li><a href="clockin.html" class="active">Clock In</a></li>
+            <li><a href="mypay.html">My Pay</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
 </header>
+
 <body>
+    <main>
+        <div class="employees">
+            Your Name
+            <span class="clockin">Clocked in at</span>
+            <span class="time">1:31pm</span>
+        </div>
 
-<main>
+        <div>
+            <label for="clock">Time</label>
+            <input type="constant" id="clock" value="1:31pm" readonly>
+        </div>
+        <br>
+        <div>
+            <button id="clockInButton" class="action-button" onclick="activateButton('clockIn')">Clock In</button>
+            <button id="clockOutButton" class="action-button" onclick="activateButton('clockOut')">Clock Out</button>
+        </div>
 
-<div class="employees">
-    Your Name
-    <span class="clockin">Clocked in at</span>
-    <span class="time">1:31pm</span>
-</div>
+        <div class="notification-table">
+            <ul class="notification">
+                <li class="employees">Josh clocked out at 1:20pm</li>
+                <li class="employees">Grace clocked in at 1:09pm</li>
+                <li class="employees">Josh clocked in at 10:15am</li>
+            </ul>
+        </div>
 
-<ul class="notification">
-    <li class="employees">
-        Josh clocked out at 1:20pm
-    </li>
-    <li class="employees">
-        Grace clocked in at 1:09pm
-    </li>
-    <li class="employees">
-        Josh clocked in at 10:15am
-    </li>
-</ul>
+    </main>
 
-<div>
-    <label for="clock">Time</label>
-    <input type="constant" id="clock" value="1:31pm" readonly>
-</div>
-<br>
-<div>
-    <button id="clockInButton" class="action-button" onclick="activateButton('clockIn')">Clock In</button>
-    <button id="clockOutButton" class="action-button" onclick="activateButton('clockOut')">Clock Out</button>
-</div>
+    <footer>
+        <hr>
+        <span class="text-reset">Mona Ueno</span>
+        <br>
+        <a href="https://github.com/monaueno">Github</a>
+    </footer>
 
-</main>
+    <script>
+        function activateButton(action) {
+            const clockInButton = document.getElementById('clockInButton');
+            const clockOutButton = document.getElementById('clockOutButton');
 
-<footer>
-  <hr>
-  <span class="text-reset">Mona Ueno</span>
-  <br>
-  <a href="https://github.com/monaueno">Github</a>
-</footer>
+            if (action === 'clockIn') {
+                clockInButton.classList.add('active');
+                clockOutButton.classList.remove('active');
+            } else {
+                clockOutButton.classList.add('active');
+                clockInButton.classList.remove('active');
+            }
+        }
+    </script>
 </body>
 </html>
-
-<script>
-    function activateButton(action) {
-        const clockInButton = document.getElementbyID('clockInButton');
-        const clockOutButton = document.getElementByID('clockOutButton');
-
-        if (action === 'clockIn'){
-            clockInButton.classList.add('active');
-            clockOutButton.classList.remove('active');
-        } else{
-            clockOutButton.classList.add('active');
-            clockInButton.classList.remove('active');
-        }
-    }
-</script>

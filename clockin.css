@@ -97,6 +97,35 @@ main {
   margin-top: 80px; /* Add margin-top to avoid content hiding behind the fixed header */
 }
 
+.notification-table{
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4pz 15pz rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 90%;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.notification{
+  list-style-type: none;
+  padding: 0;
+}
+
+.notification li{
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s;
+}
+
+notification li:hover{
+  background-color: rgba(106, 142, 174, 0.1);
+}
+
+.notification li:last-child{
+  border-bottom: none;
+}
+
 footer {
   flex: 0 30px;
 }
