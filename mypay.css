@@ -71,8 +71,55 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    margin-top: 80px; /* Add margin-top to avoid content hiding behind the fixed header */
+    justify-content: flex-start;
+    margin-top: 80px; 
+    padding: 20px;
+    background-color: #f7f9fc;
+    width: 100%;
+}
+
+.last-entry{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.amount{
+  font-size: 36px;
+  color: #4A4A4A;
+}
+
+.hours{
+  font-size:20px;
+  color:#333;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+
+thead{
+  background-color: #6A8EAE;
+  color: white;
+}
+
+th, td{
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover{
+  background-color: rgba(106, 142, 174, 0.1);
+}
+
+tbody tr:last-child td{
+  border-bottom: none;
 }
   
   footer {
