@@ -93,6 +93,41 @@ main {
   padding:20px;
 }
 
+.login-container{
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align:center;
+}
+
+.input-group{
+  margin-bottom: 15px;
+}
+
+input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6A8EAE;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #5A7B9D;
+}
+
 footer {
   flex: 0 30px;
 }
