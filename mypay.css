@@ -121,7 +121,23 @@ tr:hover{
 tbody tr:last-child td{
   border-bottom: none;
 }
-  
+.logout-button {
+  background-color: #E74C3C; /* Red background for the logout button */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px 10px; /* Padding for the button */
+  cursor: pointer; /* Pointer on hover */
+  position: absolute; /* Position it in the top right */
+  right: 20px; /* Space from the right */
+  top: 10px; /* Space from the top */
+  transition: background-color 0.3s; /* Smooth background change */
+}
+
+.logout-button:hover {
+  background-color: #C0392B; /* Darker red on hover */
+}
+
   footer {
     flex: 0 30px;
   }
