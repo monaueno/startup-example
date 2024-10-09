@@ -40,11 +40,24 @@
 
         <div class="notification-table">
             <ul class="notification">
-                <li class="employees">Josh clocked out at 1:20pm</li>
-                <li class="employees">Grace clocked in at 1:09pm</li>
-                <li class="employees">Josh clocked in at 10:15am</li>
+                <li class="employees">Josh: 1:20pm - Clocked Out</li>
+                <li class="employees">Grace: 1:09pm - Clocked In</li>
+                <li class="employees">Josh: 10:15am - Clocked in</li>
             </ul>
         </div>
+
+        <div class="history-section">
+            <span class="see-more" onclick="toggleHistory()">See History</span>
+            <div class="history-content" style="display: none;">
+                <ul class="history-list">
+                    <li class="employees">Kevin: 10:15am - Clocked in</li>
+                    <li class="employees">Kevin: 1:20pm - Clocked out</li>
+                    <li class="employees">Greg: 1:09pm - Clocked in</li>
+                    <li class="employees">Greg: 1:30pm - Clocked out</li>
+                </ul>
+            </div>
+        </div>
+        
 
     </main>
 
@@ -66,6 +79,15 @@
             } else {
                 clockOutButton.classList.add('active');
                 clockInButton.classList.remove('active');
+            }
+        }
+
+        function toggleHistory() {
+            const historyContent = document.querySelector('.history-content');
+            if (historyContent.style.display === "none") {
+                historyContent.style.display = "block";
+            } else {
+                historyContent.style.display = "none";
             }
         }
     </script>

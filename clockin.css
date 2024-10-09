@@ -126,6 +126,40 @@ notification li:hover{
   border-bottom: none;
 }
 
+.history-list {
+  list-style-type: none; /* No bullet points */
+  padding: 0;
+  margin: 0; /* No padding */
+}
+
+.history-list li {
+  padding: 10px; /* Space inside each entry */
+  border-bottom: 1px solid #eee; /* Line between entries */
+  transition: background-color 0.3s; /* Smooth background change */
+  text-align: left;
+}
+
+.history-list li:hover {
+  background-color: rgba(106, 142, 174, 0.1); /* Highlight on hover */
+}
+
+.history-list li:last-child {
+  border-bottom: none; /* Remove the last border */
+}
+
+
+.see-more{
+  cursor: pointer;
+  color: #6A8EAE;
+  text-decoration: underline;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.see-more:hover{
+  color: #5A7B9D;
+}
+
 footer {
   flex: 0 30px;
 }
