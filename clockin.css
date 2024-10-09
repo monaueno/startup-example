@@ -97,6 +97,29 @@ main {
   margin-top: 80px; /* Add margin-top to avoid content hiding behind the fixed header */
 }
 
+.employees {
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  margin: 20px 0; /* Add some margin for spacing */
+  text-align: center; /* Center the text */
+}
+
+
+.time-section {
+  margin: 40px 0; /* Adjust this margin to position it lower */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.time {
+  font-size: 24px; /* Make the time larger */
+  font-weight: bold; /* Make the time bold */
+}
+
+
 .notification-table{
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
