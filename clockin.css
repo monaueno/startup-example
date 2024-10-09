@@ -108,15 +108,16 @@ main {
 
 
 .time-section {
-  margin: 40px 0; /* Adjust this margin to position it lower */
+  margin: 60px 0; /* Adjust this margin to position it lower */
   display: flex;
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items horizontally */
 }
 
 .time {
-  font-size: 24px; /* Make the time larger */
+  font-size: 48px; /* Make the time larger */
   font-weight: bold; /* Make the time bold */
+  margin-top: 10px;
 }
 
 
