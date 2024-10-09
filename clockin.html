@@ -46,8 +46,8 @@
 </div>
 <br>
 <div>
-    <button>Clock In</button>
-    <button>Clock Out</button>
+    <button id="clockInButton" class="action-button" onclick="activateButton('clockIn')">Clock In</button>
+    <button id="clockOutButton" class="action-button" onclick="activateButton('clockOut')">Clock Out</button>
 </div>
 
 </main>
@@ -60,3 +60,18 @@
 </footer>
 </body>
 </html>
+
+<script>
+    function activateButton(action) {
+        const clockInButton = document.getElementbyID('clockInButton');
+        const clockOutButton = document.getElementByID('clockOutButton');
+
+        if (action === 'clockIn'){
+            clockInButton.classList.add('active');
+            clockOutButton.classList.remove('active');
+        } else{
+            clockOutButton.classList.add('active');
+            clockInButton.classList.remove('active');
+        }
+    }
+</script>
