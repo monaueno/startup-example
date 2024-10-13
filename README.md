@@ -69,3 +69,37 @@ I also learned how to make a table:
     </tbody>
   </thead>
 </table>
+
+## CSS - what I learned from my startup.
+
+I learned how to do the sections:
+
+.left-section{
+  background-image: url('https://github.com/user-attachments/assets/fcc6a15e-cb78-40ce-8f2d-6ae623fa0244');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.right-section{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:20px;
+}
+
+I also learned how to make the background a picture.
+background-image: url('https://github.com/user-attachments/assets/fcc6a15e-cb78-40ce-8f2d-6ae623fa0244');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+
+
