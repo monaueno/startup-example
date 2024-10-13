@@ -72,7 +72,7 @@ I also learned how to make a table:
 
 ## CSS - what I learned from my startup.
 
-I learned how to do the sections:
+# I learned how to do the sections:
 
 
 .left-section{
@@ -99,7 +99,7 @@ I learned how to do the sections:
 }
 
 
-I also learned how to make the background a picture.
+# I also learned how to make the background a picture.
 
 background-image: url('https://github.com/user-attachments/assets/fcc6a15e-cb78-40ce-8f2d-6ae623fa0244');
 background-size: cover;
