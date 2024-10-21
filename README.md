@@ -2,6 +2,8 @@
 
 ## TodayPay!
 
+### Elevator Pitch
+
 As a college student, there are many bills I need to pay such as rent, student loans, groceries, etc; however, I only receive my paycheck every two weeks, making it hard to pay these bills on time. TodayPay would be partnered with companies to help fix this problem! TodayPay is a time clock app where it allows employees to clock in and out, then are able to see and get their money in real time! With a sleek and easy design to clock in and out, this will improve the productivity of employees and stimulate positive reinforcement. 
 
 # Here are the 7 technologies I need to use:
