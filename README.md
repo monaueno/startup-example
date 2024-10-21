@@ -73,11 +73,11 @@ I also learned how to make a table:
 </table>
 
 ### What I accomplished in HTML
-[x]Four HTML pages
-[x]Links: the login page automatically links to the clock in page
-[x]Images: I added an image to the Preferences page
-[x]DB/Login: Input box and submit button for login
-[x]WebSocket: The time and clock in is realtime
+-[x]Four HTML pages
+-[x]Links: the login page automatically links to the clock in page
+-[x]Images: I added an image to the Preferences page
+-[x]DB/Login: Input box and submit button for login
+-[x]WebSocket: The time and clock in is realtime
 
 # CSS - what I learned from my startup.
 
