@@ -48,7 +48,7 @@ Time stamps and pay are persistently stored
 ## **Time Clock Screen Rough Draft**
 ![timeclock sheet](https://github.com/user-attachments/assets/709d0a92-f3d0-430d-855f-a962c0784193)
 
-## HTTP - what I learned from my startup.
+# HTTP - what I learned from my startup.
 
 I learned how to make input boxes: <div> <span>*</span>
 <input type="text" placeholder="placeholder">
@@ -72,14 +72,14 @@ I also learned how to make a table:
   </thead>
 </table>
 
-#### What I accomplished in HTML
-[x] Four HTML pages
-[x] Links: the login page automatically links to the clock in page
-[x] Images: I added an image to the Preferences page
-[x] DB/Login: Input box and submit button for login
-[x] WebSocket: The time and clock in is realtime
+### What I accomplished in HTML
+[x]Four HTML pages
+[x]Links: the login page automatically links to the clock in page
+[x]Images: I added an image to the Preferences page
+[x]DB/Login: Input box and submit button for login
+[x]WebSocket: The time and clock in is realtime
 
-## CSS - what I learned from my startup.
+# CSS - what I learned from my startup.
 
 ### I learned how to do the sections:
 
