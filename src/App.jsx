@@ -7,6 +7,8 @@ import MyPay from './pages/mypay';
 import Profile from './pages/profile';
 import './App.css'; // Import global styles
 
+console.log("App component is rendering");
+
 function App() {
   return (
     <Router>
