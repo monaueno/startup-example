@@ -1,7 +1,7 @@
 // src/pages/Profile.jsx
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './profile.css';
+import './Profile.css';
 
 function Profile() {
   const navigate = useNavigate();
@@ -22,17 +22,22 @@ function Profile() {
       </header>
 
       <main>
-        <h1>User Profile</h1>
-        <div className="profile-info">
-          <p><strong>Name:</strong> John Doe</p>
-          <p><strong>Email:</strong> johndoe@example.com</p>
-          <p><strong>Position:</strong> Software Engineer</p>
-          <p><strong>Member Since:</strong> January 2022</p>
-        </div>
-
-        <div className="profile-actions">
-          <button onClick={() => navigate('/edit-profile')} className="edit-button">Edit Profile</button>
-          <button onClick={() => navigate('/settings')} className="settings-button">Settings</button>
+        <h1>Welcome, Your Name!</h1>
+        <div className="profile-container">
+          <div className="picture-box">
+            <img
+              width="100px"
+              src="https://github.com/user-attachments/assets/396112a4-4cf7-4215-a2e9-86534faa81e6"
+              alt="Profile Picture"
+            />
+          </div>
+          <div className="button-container">
+            <button className="action-button">Settings</button>
+            <button className="action-button">Preferences</button>
+            <button className="action-button">Compensation</button>
+            <button className="action-button">Benefits</button>
+            <button className="action-button">Contact</button>
+          </div>
         </div>
       </main>
 
