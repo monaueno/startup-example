@@ -1,7 +1,7 @@
 // src/pages/Login.jsx
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Login.css'; // Assuming you moved your styles to Login.css
+import './login.css'; // Assuming you moved your styles to Login.css
 
 function Login() {
   const navigate = useNavigate();
