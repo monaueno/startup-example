@@ -1,17 +1,33 @@
 // src/pages/Login.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './login.css'; // Assuming you moved your styles to Login.css
+import './login.css';
 
 function Login() {
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Mock login validation
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    if (email === "test@todaypay.com" && password === "password123") {
+      navigate('/clockin'); // Navigate to Clock In page after successful login
+    } else {
+      setErrorMessage('Invalid email or password. Please try again.');
+    }
+  };
 
   const handleCreateAccount = () => {
-    navigate('/create'); // Adjust if you set up a route for account creation
+    navigate('/create');
   };
 
   return (
     <div>
+      {/* Header */}
       <header>
         <h1>TodayPay!</h1>
         <nav>
@@ -24,29 +40,45 @@ function Login() {
         </nav>
       </header>
 
+      {/* Main Content */}
       <main>
-        <div className="left-section">
+        <section className="left-section" aria-label="Welcome section">
           <h1>Get Paid Today!</h1>
-        </div>
-        <div className="right-section">
+        </section>
+
+        <section className="right-section" aria-label="Login form">
           <div className="login-container">
             <h2>Login</h2>
-            <form onSubmit={(e) => { e.preventDefault(); navigate('/clockin'); }}>
+            <form onSubmit={handleSubmit}>
               <div className="input-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  required
+                />
               </div>
               <div className="input-group">
                 <label htmlFor="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="password" required />
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="password"
+                  required
+                />
               </div>
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
               <button type="submit">Login</button>
-              <button type="button" onClick={handleCreateAccount}>Create</button>
+              <button type="button" onClick={handleCreateAccount}>Create Account</button>
             </form>
           </div>
-        </div>
+        </section>
       </main>
 
+      {/* Footer */}
       <footer>
         <hr />
         <span className="text-reset">Mona Ueno</span><br />

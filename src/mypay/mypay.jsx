@@ -3,11 +3,18 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './mypay.css';
 
+const payrollData = [
+  { date: '9/1', amount: '$84.00', hours: '5.6' },
+  { date: '8/31', amount: '$111.00', hours: '7.4' },
+  { date: '8/30', amount: '$102.00', hours: '6.8' },
+];
+
 function MyPay() {
   const navigate = useNavigate();
 
   return (
     <div>
+      {/* Header */}
       <header>
         <h1>TodayPay!</h1>
         <nav>
@@ -21,42 +28,38 @@ function MyPay() {
         <button className="logout-button" onClick={() => navigate('/')}>Log Out</button>
       </header>
 
+      {/* Main Content */}
       <main>
         <h1>Payroll</h1>
-        <div className="last-entry">
+        <section className="last-entry" aria-label="Last payroll entry">
           <h3>Last Entry</h3>
           <h2 className="amount">$105.00</h2>
           <p className="hours">Hours Worked: 7</p>
-        </div>
+        </section>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Amount</th>
-              <th>Hours Worked</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>9/1</td>
-              <td>$84.00</td>
-              <td>Hours Worked: 5.6</td>
-            </tr>
-            <tr>
-              <td>8/31</td>
-              <td>$111.00</td>
-              <td>Hours Worked: 7.4</td>
-            </tr>
-            <tr>
-              <td>8/30</td>
-              <td>$102.00</td>
-              <td>Hours Worked: 6.8</td>
-            </tr>
-          </tbody>
-        </table>
+        <section aria-label="Payroll history">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Hours Worked</th>
+              </tr>
+            </thead>
+            <tbody>
+              {payrollData.map((entry, index) => (
+                <tr key={index}>
+                  <td>{entry.date}</td>
+                  <td>{entry.amount}</td>
+                  <td>Hours Worked: {entry.hours}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
       </main>
 
+      {/* Footer */}
       <footer>
         <hr />
         <span className="text-reset">Mona Ueno</span><br />
