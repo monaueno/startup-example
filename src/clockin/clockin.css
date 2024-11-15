@@ -124,7 +124,7 @@ main {
 .notification-table{
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
-  box-shadow: 0 4pz 15pz rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 90%;
   margin-top: 20px;
@@ -142,7 +142,7 @@ main {
   transition: background-color 0.3s;
 }
 
-notification li:hover{
+.notification li:hover{
   background-color: rgba(106, 142, 174, 0.1);
 }
 

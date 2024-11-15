@@ -1,23 +1,56 @@
 // src/pages/ClockIn.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './clockin.css';
 
 function ClockIn() {
   const navigate = useNavigate();
-  const [historyVisible, setHistoryVisible] = useState(false);
+
+  // State to track the active button
   const [activeButton, setActiveButton] = useState(null);
 
+  // State to toggle the visibility of the history section
+  const [historyVisible, setHistoryVisible] = useState(false);
+
+  // State to show the current time
+  const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
+
+  // Mock data for notifications and history
+  const notifications = [
+    { name: "Josh", time: "1:20pm", status: "Clocked Out" },
+    { name: "Grace", time: "1:09pm", status: "Clocked In" },
+    { name: "Josh", time: "10:15am", status: "Clocked In" },
+  ];
+
+  const history = [
+    { name: "Kevin", time: "10:15am", status: "Clocked In" },
+    { name: "Kevin", time: "1:20pm", status: "Clocked Out" },
+    { name: "Greg", time: "1:09pm", status: "Clocked In" },
+    { name: "Greg", time: "1:30pm", status: "Clocked Out" },
+  ];
+
+  // Update the current time every second
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString());
+    }, 1000);
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+  // Handle activating the clock-in or clock-out button
   const activateButton = (action) => {
     setActiveButton(action);
   };
 
+  // Toggle the visibility of the history section
   const toggleHistory = () => {
     setHistoryVisible(!historyVisible);
   };
 
   return (
     <div>
+      {/* Header */}
       <header>
         <h1>TodayPay!</h1>
         <nav>
@@ -31,11 +64,14 @@ function ClockIn() {
         <button className="logout-button" onClick={() => navigate('/')}>Log Out</button>
       </header>
 
+      {/* Main Content */}
       <main>
+        {/* Current Time */}
         <div className="employees">
-          <span className="time">1:31:28pm</span>
+          <span className="time">{currentTime}</span>
         </div>
 
+        {/* Action Buttons */}
         <div>
           <button
             id="clockInButton"
@@ -53,29 +89,37 @@ function ClockIn() {
           </button>
         </div>
 
+        {/* Notifications Section */}
         <div className="notification-table">
           <ul className="notification">
-            <li className="employees">Josh: 1:20pm - Clocked Out</li>
-            <li className="employees">Grace: 1:09pm - Clocked In</li>
-            <li className="employees">Josh: 10:15am - Clocked in</li>
+            {notifications.map((item, index) => (
+              <li key={index} className="employees">
+                {item.name}: {item.time} - {item.status}
+              </li>
+            ))}
           </ul>
         </div>
 
+        {/* History Section */}
         <div className="history-section">
-          <span className="see-more" onClick={toggleHistory}>See History</span>
+          <span className="see-more" onClick={toggleHistory}>
+            {historyVisible ? "Hide History" : "See History"}
+          </span>
           {historyVisible && (
             <div className="history-content">
               <ul className="history-list">
-                <li className="employees">Kevin: 10:15am - Clocked in</li>
-                <li className="employees">Kevin: 1:20pm - Clocked out</li>
-                <li className="employees">Greg: 1:09pm - Clocked in</li>
-                <li className="employees">Greg: 1:30pm - Clocked out</li>
+                {history.map((item, index) => (
+                  <li key={index} className="employees">
+                    {item.name}: {item.time} - {item.status}
+                  </li>
+                ))}
               </ul>
             </div>
           )}
         </div>
       </main>
 
+      {/* Footer */}
       <footer>
         <hr />
         <span className="text-reset">Mona Ueno</span><br />
