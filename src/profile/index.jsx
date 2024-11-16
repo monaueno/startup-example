@@ -1,8 +1,8 @@
 import React, { useState } from 'react'; // Import useState for state management
-import './about.css';
+import './profile.css';
 import placeholder from '/Users/monaueno/Desktop/CS260/startup-example/startup-project/public/placeholder.jpg';
 
-export function About() {
+export function Index() {
   const [activeSection, setActiveSection] = useState(''); // Track the active section
 
   return (
