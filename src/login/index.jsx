@@ -5,7 +5,7 @@ export function Login() {
   return (
     <main className="container-fluid bg-secondary text-center">
       <div>
-        <h1>Welcome to Simon</h1>
+        <h1>Welcome to TodayPay</h1>
         <form method="get" action="/play">
           <div className="input-group mb-3">
             <span className="input-group-text">@</span>
