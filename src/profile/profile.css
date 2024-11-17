@@ -1,0 +1,43 @@
+.picture-box img {
+    border-radius: 50%;
+    border: 3px solid #6A8EAE;
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 30px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  button {
+    background-color: #6A8EAE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #5A7B9D;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:focus {
+    outline: 2px solid #5A7B9D;
+    outline-offset: 2px;
+  }
+  
+  button.active{
+    background-color: #4A6B8D;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
