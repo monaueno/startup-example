@@ -3,7 +3,7 @@ import { uLink, useNavigate } from 'react-router-dom';
 import { useLogTime } from '../clockin/LogTime';
 import './MyPay.css';
 
-function MyPay() {
+export function MyPay() {
     const navigate = useNavigate();
     const { calculatePay } = useLogTime();
 
