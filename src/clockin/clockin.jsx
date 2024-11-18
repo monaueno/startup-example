@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Workers } from './workers';
 import { TimeClock } from './timeclock'
+import { LogTimeProvider } from './LogTime';
 
 export function ClockIn(props) {
     return(
