@@ -1,55 +1,66 @@
 import React from 'react';
+import { uLink, useNavigate } from 'react-router-dom';
+import { useLogTime } from './LogTime';
 import './MyPay.css';
 
-const LogContext = createContext();
+function MyPay() {
+    const navigate = useNavigate();
+    const { calculatePay } = useLogTime();
 
-export const LogTimeProvider = ({ children }) => {
-    const [logs, setLogs] = useState([]);
-    const hourlyRate = 15;
-
-    const addLog = (action, time) => {
-        setLogs((prevLogs) => [...prevLogs, { action, time }]);
-    };
-
-    const calculatePay = () => {
-        let totalPay = 0;
-        let totalHours = 0;
-
-        let lastClockIn = null;
-
-        const payEntries = logs.reduce((acc, log) => {
-            if (log.action === 'Clock In') {
-                lastClockIn = new Date(log.time);
-            } else if (log.action === 'Clock Out' && lastClockIn) {
-                const clockOutTime = new Date(log.time);
-                const hoursWorked = (clockOutTime - lastClockIn) / (1000 * 60 * 60);
-                const pay = hoursWorked * hourlyRate;
-
-                totalHours += hoursWorked;
-                totalPay += pay;
-
-                acc.push({
-                    date: log.time.split(' ')[0],
-                    hours: hoursWorked.toFixed(2),
-                    amount: `$${pay.toFixed(2)}`,
-                });
-
-                lastClockIn = null;
-            }
-            return acc;
-        }, []);
-
-        return { payEntries, totalPay: `$${totalPay.toFixed(2)}`, totalHours: totalHours.toFixed(2) };
-    };
+    const { payEntries, totalPay, totalHours } = calculatePay();
 
     return (
-        <LogContext.Provider value={{ logs, addLog, calculatePay }}>
-            {children}
-        </LogContext.Provider>
+        <div>
+            <header>
+                <h1>TodayPay!</h1>
+                <nav>
+                    <ul>
+                        <li><Link to="/">Log In</Link></li>
+                        <li><Link to="/clockin">Clock In</Link></li>
+                        <li><Link to="/mypay" className="active">My Pay</Link></li>
+                        <li><Link to="/profile">Profile</Link></li>
+                    </ul>
+                </nav>
+                <button className="logout-button" onClick={() => navigate('/')}>Log Out</button>
+            </header>
+
+            <main>
+                <h1>Payroll</h1>
+                <section className="last-entry" aria-label="Last payroll entry">
+                    <h3>Total Earnings</h3>
+                    <h2 className="amount">{totalPay}</h2>
+                    <p className="hours">Total Hours Worked: {totalHours}</p>
+                </section>
+
+                <section aria-label="Payroll history">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Hours Worked</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {payEntries.map((entry, index) => (
+                                <tr key={index}>
+                                    <td>{entry.date}</td>
+                                    <td>{entry.amount}</td>
+                                    <td>{entry.hours}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+
+            <footer>
+                <hr />
+                <span className="text-reset">Mona Ueno</span><br />
+                <a href="https://github.com/monaueno/startup-example/blob/main/README.md">Github</a>
+            </footer>
+        </div>
     );
-};
+}
 
-export const useLogTime = () => {
-    return useContext(LogContext);
-};
-
+export default MyPay;
