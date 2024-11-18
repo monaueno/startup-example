@@ -1,14 +1,16 @@
 import React from 'react';
 
-import { Workers } from './workers';
-import { TimeClock } from './timeclock'
-import { LogTimeProvider } from './LogTime';
+import { Workers } from './ClockIn/workers.jsx';
+import { TimeClock } from './ClockIn/timeclock.jsx'
+import { LogTimeProvider } from './ClockIn/LogTime.jsx';
 
 export function ClockIn(props) {
-    return(
-        <main className='bg-secondary'>
-            <Workers userName={props.userName} />
-            <ClockIn userName={props.userName} />
-        </main>
+    return (
+        <LogTimeProvider>
+            <main className="bg-secondary">
+                <Workers />
+                <TimeClock userName={props.userName} />
+            </main>
+        </LogTimeProvider>
     );
 }
