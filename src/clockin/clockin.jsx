@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Workers } from './ClockIn/workers.jsx';
+import { Workers } from './workers.jsx';
 import { TimeClock } from './ClockIn/timeclock.jsx'
 import { LogTimeProvider } from './ClockIn/LogTime.jsx';
 import './ClockIn.css'
