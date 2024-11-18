@@ -16,7 +16,8 @@ export function TimeClock({ userName }){
         addMessage('${userName) clocked in at ${time}')
     };
 
-    const handleClockOut = () =? {
-        const time = currentTime.toLocale
+    const handleClockOut = () => {
+        const time = currentTime.toLocaleTimeString();
+        addMessage('${username} clocked out at ${time}')
     }
 }
