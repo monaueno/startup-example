@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
-import { MyPay } from './mypay/mypay';
+import { MyPay } from './mypay/MyPay';
 import { ClockIn } from './clockin/ClockIn';
 import { Profile } from './Profile/Profile';
 import { Login } from './LogIn/LogIn';
