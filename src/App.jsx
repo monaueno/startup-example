@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
-import { MyPay } from './mypay/MyPay';
+import MyPay from './mypay/MyPay';
 import { ClockIn } from './clockin/ClockIn';
-import { Profile } from './Profile/Profile';
-import { Login } from './LogIn/LogIn';
+import Profile from './Profile/Profile';
+import Login from './LogIn/LogIn';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
-function App() {
+export default function App() {
   const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
   const isAuthenticated = !!userName;
 
@@ -111,5 +111,3 @@ function NotFound() {
     </main>
   );
 }
-
-export default App;
