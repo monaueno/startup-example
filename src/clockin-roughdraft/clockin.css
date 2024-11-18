@@ -97,7 +97,7 @@ main {
   margin-top: 80px; /* Add margin-top to avoid content hiding behind the fixed header */
 }
 
-.employees {
+.workers {
   display: flex; /* Use flexbox for alignment */
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items horizontally */
