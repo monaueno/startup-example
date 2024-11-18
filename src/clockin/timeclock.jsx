@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLogTime } from './LogTime';
+import { useLogTime } from './clockin/LogTime';
 import './timeclock.css';
 
 export function TimeClock({ userName }) {
