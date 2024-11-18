@@ -3,7 +3,7 @@ import { uLink, useNavigate } from 'react-router-dom';
 import { useLogTime } from '../clockin/LogTime';
 import './MyPay.css';
 
-export function MyPay() {
+export default function MyPay() {
     const navigate = useNavigate();
     const { calculatePay } = useLogTime();
 
@@ -11,19 +11,6 @@ export function MyPay() {
 
     return (
         <div>
-            <header>
-                <h1>TodayPay!</h1>
-                <nav>
-                    <ul>
-                        <li><Link to="/">Log In</Link></li>
-                        <li><Link to="/clockin">Clock In</Link></li>
-                        <li><Link to="/mypay" className="active">My Pay</Link></li>
-                        <li><Link to="/profile">Profile</Link></li>
-                    </ul>
-                </nav>
-                <button className="logout-button" onClick={() => navigate('/')}>Log Out</button>
-            </header>
-
             <main>
                 <h1>Payroll</h1>
                 <section className="last-entry" aria-label="Last payroll entry">
@@ -53,14 +40,6 @@ export function MyPay() {
                     </table>
                 </section>
             </main>
-
-            <footer>
-                <hr />
-                <span className="text-reset">Mona Ueno</span><br />
-                <a href="https://github.com/monaueno/startup-example/blob/main/README.md">Github</a>
-            </footer>
         </div>
     );
 }
-
-export default MyPay;
