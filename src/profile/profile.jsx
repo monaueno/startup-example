@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Profile.css';
 
-export function Profile(props) {
+export default function Profile(props) {
     const [imageUrl, setImageUrl] = useState('');
     const [activeSection, setActiveSection] = useState('');
 
