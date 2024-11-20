@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Profile.css';
+import './profile.css';
 
 export default function Profile(props) {
     const [imageUrl, setImageUrl] = useState('');
