@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
-import MyPay from './mypay/MyPay';
-import ClockIn from './clockin/ClockIn';
+import MyPay from './mypay/mypay';
+import ClockIn from './clockin/clockin';
 import Profile from './profile/profile';
-import Login from './logIn/logIn';
+import Login from './login/login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 

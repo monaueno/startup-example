@@ -3,7 +3,8 @@ import { Unauthenticated } from './unauthenticated';
 import { Authenticated } from './authenticated';
 import { AuthState } from './authState';
 
-export default function Login({ userName, authState, onAuthChange }) {
+
+export default function Login({ userName, authState, onAuthChange }){
   console.log('Login Component Props:', { userName, authState });
 
   return (

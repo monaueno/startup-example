@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLogTime } from './LogTime';
+import { useLogTime } from './logtime';
 import './workers.css'
 
 export function Workers(){
