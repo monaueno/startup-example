@@ -1,5 +1,5 @@
 import React from 'react';
-import { uLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLogTime } from '../clockin/logtime';
 import './MyPay.css';
 

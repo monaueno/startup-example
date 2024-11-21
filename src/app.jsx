@@ -4,6 +4,7 @@ import MyPay from './mypay/mypay';
 import ClockIn from './clockin/clockin';
 import Profile from './profile/profile';
 import Login from './login/login';
+import { AuthState } from './login/authState';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
