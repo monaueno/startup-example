@@ -4,6 +4,7 @@ import MyPay from './mypay/mypay';
 import ClockIn from './clockin/clockin';
 import Profile from './profile/profile';
 import Login from './login/login';
+import { LogTimeProvider } from './clockin/logtime';
 import { AuthState } from './login/authState';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
@@ -14,6 +15,7 @@ export default function App() {
   console.log(isAuthenticated)
 
   return (
+    <LogTimeProvider>
     <BrowserRouter>
       <div className='body bg-light text-dark'>
         {/* Header */}
@@ -102,6 +104,7 @@ export default function App() {
         </footer>
       </div>
     </BrowserRouter>
+    </LogTimeProvider>
   );
 }
 

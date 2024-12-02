@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useLogTime } from '../clockin/logtime';
+import { useLogTime } from '../clockin/logtime.jsx';
 import './MyPay.css';
 
 export default function MyPay() {
