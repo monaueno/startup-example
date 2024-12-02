@@ -37,7 +37,7 @@ export const LogTimeProvider = ({ children }) => {
                 totalPay += pay;
 
                 acc.push({
-                    date: log.time.split(' ')[0],
+                    date: new Date(log.time).toLocaleDateString(),
                     hours: hoursWorked.toFixed(2),
                     amount: `$${pay.toFixed(2)}`,
                 });
