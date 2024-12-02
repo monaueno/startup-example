@@ -14,7 +14,7 @@ export function Workers(){
                 <ul>
                     {logs.map((log, index) => (
                         <li key={index}>
-                            <strong>{log.action}</strong>at {log.time}
+                            <strong>{log.action}</strong> at {log.time}
                         </li>
                     ))}
                 </ul>
