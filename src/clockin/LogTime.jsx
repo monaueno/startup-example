@@ -3,12 +3,21 @@ import React, { createContext, useState, useContext } from 'react';
 const LogContext = createContext();
 
 export const LogTimeProvider = ({ children }) => {
-    const [logs, setLogs] = useState([]);
+    const [logs, setLogs] = useState(() => {
+        const savedLogs = localStorage.getItem('logs');
+        return savedLogs ? JSON.parse(savedLogs) : [];
+    });
     const hourlyRate = 15;
 
     const addLog = (action, time) => {
-        setLogs((prevLogs) => [...prevLogs, { action, time }]);
-    };
+        setLogs((prevLogs) => {
+            const updatedLogs = [...prevLogs, { action, time }];
+
+        localStorage.setItem('logs', JSON.stringify(updatedLogs));
+
+        return updatedLogs;
+    });
+};
 
     const calculatePay = () => {
         let totalPay = 0;
