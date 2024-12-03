@@ -19,46 +19,44 @@ function Header({ isAuthenticated, handleLogout }) {
   };
 
   return (
-    <header className="container-fluid">
-      <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-        <div className="container-fluid">
-          <NavLink className="navbar-brand text-light" to="/">
-            TodayPay!
-          </NavLink>
-          <div className="collapse navbar-collapse">
-            <ul className="navbar-nav me-auto">
+    <header className="header">
+      <nav className="navbar">
+        <div className="navbar-brand">
+          <NavLink to="/">TodayPay!</NavLink>
+          </div>
+          <div className="navbar-items">
+          <ul className="navbar-nav">
               {isAuthenticated ? (
                 <>
                   <li className="nav-item">
-                    <NavLink className="nav-link text-light" to="/clockin">
+                    <NavLink className="nav-link" to="/clockin">
                       Clock In
                     </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className="nav-link text-light" to="/mypay">
+                    <NavLink className="nav-link" to="/mypay">
                       My Pay
                     </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className="nav-link text-light" to="/profile">
+                    <NavLink className="nav-link" to="/profile">
                       Profile
                     </NavLink>
                   </li>
                 </>
               ) : (
                 <li className="nav-item">
-                  <NavLink className="nav-link text-light" to="/">
+                  <NavLink className="nav-link" to="/">
                     Log In
                   </NavLink>
                 </li>
               )}
             </ul>
             {isAuthenticated && (
-              <button className="btn btn-danger" onClick={onLogoutClick}>
+              <button className="logout-button" onClick={onLogoutClick}>
                 Log Out
               </button>
             )}
-          </div>
         </div>
       </nav>
     </header>
