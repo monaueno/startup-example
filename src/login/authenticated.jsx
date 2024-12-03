@@ -15,7 +15,6 @@ export function Authenticated(props) {
 
   return (
     <div>
-      <div className='playerName'>{props.userName}</div>
       <Button variant='primary' onClick={() => navigate('/clockin')}>
         Time Clock
       </Button>

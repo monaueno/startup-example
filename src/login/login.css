@@ -2,19 +2,23 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .login-left {
     background-image: url('https://github.com/user-attachments/assets/fcc6a15e-cb78-40ce-8f2d-6ae623fa0244');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     color: #fff;
     padding: 2rem;
-    text-align: center;
   }
 
   .login-left h1{
@@ -48,29 +52,74 @@
     padding: 0.75rem;
     font-size: 1rem;
   }
-  
-  .login-container {
+
+  .login-box {
+    width: 350px;
     background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
   
-  .login-container h2 {
-    margin-bottom: 20px;
+  .login-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #007bff;
   }
   
-  .login-container {
+  .login-box {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .login-container:hover {
-    transform: scale(1.02); /* Slight zoom effect */
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+  .login-box .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
   }
   
+  .login-box .form-control {
+    flex: 1;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+  }
+
+  .login-box .input-group-text {
+    padding: 0.75rem;
+    font-size:1rem;
+    background-color:#f8f9fa;
+    border: 1px solid #ced4da;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+  }
   
+  .login-box .form-check {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+  }
   
+  .login-box .btn-primary,
+  .login-box .btn-secondary {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
   
+  .login-box .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  .login-box .btn-secondary{
+    background-color: #6c757d;
+    border: none;
+  }
+
+  .login-box .btn-secondary:hover{
+    background-color: #5a6268;
+  }

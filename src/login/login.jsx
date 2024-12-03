@@ -15,7 +15,13 @@ export default function Login({ userName, authState, onAuthChange }) {
 
       {/* Right Section */}
       <div className="login-right">
-        {authState !== AuthState.Unknown && <h1>Please Login</h1>}
+        <div className="login-box">
+          {/* Display greeting or login prompt */}
+          {authState === AuthState.Authenticated ? (
+            <h2>Hello, {userName}</h2>
+          ): (
+            <h2>Please Login</h2>
+          )}
         {authState === AuthState.Authenticated && (
           <Authenticated
             userName={userName}
@@ -30,6 +36,7 @@ export default function Login({ userName, authState, onAuthChange }) {
             }}
           />
         )}
+      </div>
       </div>
     </main>
   );
