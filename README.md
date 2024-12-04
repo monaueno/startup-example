@@ -119,5 +119,14 @@ background-repeat: no-repeat;
 - [x] Responsive to window resizing: I added flex in all my windows
 - [x] Application elements: I tried to add a background picture to make there be not as much whitespace, although the background picture is kinda blurry
 - [x] Application text content: I used sans-serif for all the text
-- [x] Application images: not as much styling as I could have done, but i centered the image on the preferences page   
+- [x] Application images: not as much styling as I could have done, but i centered the image on the preferences page
+
+## React
+- [x] Bundled and transpiled!
+- [x] Components - Login, Clock in, mypay
+  - [x] login - when you press login, it takes you to the home page
+  - [x] clockin -  displays the times you clockin and out
+  - [x] mypay - logs the amount of money made that shift
+  - [x] I tried to make the money reset every day, but it didn't work:(
+- [x] Router: routing between login and timeclock  
 
