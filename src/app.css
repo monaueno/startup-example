@@ -1,33 +1,19 @@
-/* Global Styles */
-body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #242424;
-  color: rgba(255, 255, 255, 0.87);
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-}
-
 /* Header Styles */
-header {
-  width: 100%;
-  padding: 10px 20px;
+header.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  width: 100%;
+  padding: 10px 20px;
+  position: relative;
   top: 0;
-  left: 0;
   z-index: 1000;
+  background-color: #333;
+  color: #fff;
+  height: 60px;
 }
 
-.navbar{
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,31 +23,49 @@ header {
 .navbar-brand {
   font-size: 1.5em;
   font-weight: bold;
-  color: #4a4a4a;
+  color: #fefefe; /* White for better visibility */
   text-decoration: none;
 }
 
-.navbar-nav {
+.navbar-items {
+  display: flex; /* Align children side by side */
+  align-items: center; /* Vertically align items */
+  gap: 20px; /* Add spacing between nav links and button */
+}
+
+
+.navbar-items {
   list-style: none;
-  display: flex;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Ensure proper alignment for child links */
   gap: 20px;
+}
+
+.navbar-items ul{
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.navbar-items li{
   margin: 0;
   padding: 0;
 }
 
-.nav-item {
-  font-size: 1rem;
-}
-
-.nav-link {
-  font-size: 1rem;
+a.nav-link {
   text-decoration: none;
-  color: #fefefe;
+  color: #fefefe; /* White text */
+  font-size: 1rem; /* Consistent font size */
+  display: inline-block; /* Proper inline behavior */
+  padding: 10px 15px; /* Increased clickable area */
   transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-  color: #ff6f61;
+a.nav-link:hover {
+  color: #ff6f61; /* Coral hover effect */
 }
 
 .logout-button {
@@ -76,29 +80,27 @@ header {
 }
 
 .logout-button:hover {
-  background-color: #e65b55; /* Slightly darker coral on hover */
+  background-color: #e65b55; /* Slightly darker coral */
 }
 
 /* Main Content */
 main {
-  margin-top: 80px; /* Avoid overlap with the fixed header */
+  margin-top: 60px; /* Avoid overlap with the fixed header */
+  margin-bottom: 50px;
   padding: 20px;
   width: 100%;
-  max-width: 1200px;
 }
 
 /* Footer Styles */
 footer {
   width: 100%;
   background-color: #333;
-  color: #000;
-  text-align: right;
+  color: #fff;
+  text-align: center;
   font-size: 0.8 rem;
   padding: 10px;
-  position: fixed;
+  position: relative;
   bottom: 0;
-  right: 0;
-  z-index: 100;
 }
 
 footer a {
@@ -112,17 +114,19 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
+  .navbar {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
     padding: 15px;
   }
 
-  header .navbar-nav {
-    flex-direction: row;
-    gap: 10px;
+  .navbar-nav {
+    flex-direction: column; /* Stack nav links vertically */
+    width: 100%;
   }
 
-  main {
-    padding: 10px;
+  .nav-link {
+    width: 100%; /* Make links span full width */
+    text-align: left; /* Align text to the left */
   }
 }

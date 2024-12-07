@@ -23,29 +23,29 @@ function Header({ isAuthenticated, handleLogout }) {
       <nav className="navbar">
         <div className="navbar-brand">
           <NavLink to="/">TodayPay!</NavLink>
-          </div>
+        </div>
           <div className="navbar-items">
-          <ul className="navbar-nav">
+          <ul style={{ display: 'flex', listStyle: 'none', margin: 0, padding: 0 }}>
               {isAuthenticated ? (
                 <>
-                  <li className="nav-item">
+                  <li style={{ margin: 0, padding: 0 }} >
                     <NavLink className="nav-link" to="/clockin">
                       Clock In
                     </NavLink>
                   </li>
-                  <li className="nav-item">
+                  <li>
                     <NavLink className="nav-link" to="/mypay">
                       My Pay
                     </NavLink>
                   </li>
-                  <li className="nav-item">
+                  <li>
                     <NavLink className="nav-link" to="/profile">
                       Profile
                     </NavLink>
                   </li>
                 </>
               ) : (
-                <li className="nav-item">
+                <li>
                   <NavLink className="nav-link" to="/">
                     Log In
                   </NavLink>
