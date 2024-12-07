@@ -9,8 +9,8 @@ export default function ClockIn(props) {
     return (
         <LogTimeProvider>
             <main className="bg-secondary">
-                <Workers />
                 <TimeClock userName={props.userName} />
+                <Workers />
             </main>
         </LogTimeProvider>
     );

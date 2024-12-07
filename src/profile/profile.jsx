@@ -6,7 +6,7 @@ export default function Profile(props) {
     const [activeSection, setActiveSection] = useState('');
 
     useEffect(() => {
-        setImageUrl('placeholder.jpg');
+        setImageUrl('https://github.com/user-attachments/assets/c5e45706-3790-4d60-8a9b-f0c979f2b18f');
     }, []);
 
     return (

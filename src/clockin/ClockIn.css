@@ -7,6 +7,11 @@
   body {
     font-family: Arial, sans-serif;
     font-weight: 300;
+    background-color: white;
+  }
+
+  .bg-light{
+    background-color: white;
   }
   
   main {
@@ -16,10 +21,11 @@
     align-items: center;
     justify-content: space-around;
     margin-top: 80px;
+    background-color: white;
   }
   
   header {
-    background-color: #6A8EAE;
+    background-color: white;
     color: white;
     padding: 10px;
     position: fixed;
@@ -58,7 +64,7 @@
   }
   
   nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(45, 183, 33, 0.873);
   }
   
   nav a.active {

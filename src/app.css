@@ -8,9 +8,13 @@ header.header {
   position: relative;
   top: 0;
   z-index: 1000;
-  background-color: #333;
+  background-color: #050101;
   color: #fff;
   height: 60px;
+}
+
+.body{
+  background-color: white;
 }
 
 .navbar {
@@ -65,11 +69,11 @@ a.nav-link {
 }
 
 a.nav-link:hover {
-  color: #ff6f61; /* Coral hover effect */
+  color: #e0e6ec; /* Coral hover effect */
 }
 
 .logout-button {
-  background-color: #ff6f61; /* Coral button */
+  background-color: #007bff; /* Coral button */
   color: #fff; /* White text */
   border: none;
   border-radius: 4px;
@@ -80,7 +84,7 @@ a.nav-link:hover {
 }
 
 .logout-button:hover {
-  background-color: #e65b55; /* Slightly darker coral */
+  background-color: #007bff; /* Slightly darker coral */
 }
 
 /* Main Content */
