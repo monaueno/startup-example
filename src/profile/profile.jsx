@@ -20,31 +20,31 @@ export default function Profile(props) {
                         className="btn-settings"
                         onClick={() => setActiveSection('Settings')}
                     >
-                        Show Settings
+                        Settings
                     </button>
                     <button
                         className="btn-preferences"
                         onClick={() => setActiveSection('Preferences')}
                     >
-                        Show Preferences
+                        Preferences
                     </button>
                     <button
                         className="btn-compensation"
                         onClick={() => setActiveSection('Compensation')}
                     >
-                        Show Compensation
+                        Compensation
                     </button>
                     <button
                         className="btn-benefits"
                         onClick={() => setActiveSection('Benefits')}
                     >
-                        Show Benefits
+                        Benefits
                     </button>
                     <button
                         className="btn-contact"
                         onClick={() => setActiveSection('Contact')}
                     >
-                        Show Contact
+                        Contact
                     </button>
                 </div>
                 <div className="dynamic-content">
