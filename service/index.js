@@ -65,9 +65,6 @@ apiRouter.delete('/auth/logout', (req, res) => {
 // Scores Endpoints
 // ==============================
 
-apiRouter.get('/hello', (req, res) => {
-  res.json({ message: 'Hello from the backend!' })
-});
 
 // Get scores
 apiRouter.get('/time', (req, res) => {
