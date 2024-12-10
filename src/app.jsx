@@ -71,12 +71,6 @@ export default function App() {
   );
   const [backendMessage, setBackendMessage] = useState('');
 
-  useEffect(() => {
-    fetch('/api/hello')
-      .then((response) => response.json())
-      .then((data) => setBackendMessage(data.message))
-      .catch((error) => console.error('Error fetching backend data:', error));
-  }, []);
 
   const handleAuthChange = (newUserName, newAuthState) => {
     setUserName(newUserName);

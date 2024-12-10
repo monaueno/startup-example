@@ -2,16 +2,20 @@ import express from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import cors from 'cors';
 
-// The scores and users are saved in memory and disappear whenever the service is restarted.
-let employee = {};
-let time = [];
+
+// In-memory data store for employees and time logs
+let employees = {};
+let times = [];
 
 // The service port. In production, the front-end code is statically hosted by the service on the same port.
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 // Initialize the Express app
 const app = express();
+
+app.use(cors());
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
@@ -29,32 +33,50 @@ app.use('/api', apiRouter);
 // Authentication Endpoints
 // ==============================
 
-// Create a new user
+apiRouter.get('/test', (req, res) => {
+  res.send('Server is working!');
+});
+
+
+// Create a new employee
 apiRouter.post('/auth/create', async (req, res) => {
+  console.log('Create employee request received:', req.body);
+
   const employee = employees[req.body.email];
   if (employee) {
+    console.log('Employee already exists:', req.body.email);
     res.status(409).send({ msg: 'Existing employee' });
   } else {
     const newEmployee = { email: req.body.email, password: req.body.password, token: uuidv4() };
-    users[newEmployee.email] = newEmployee;
+    employees[newEmployee.email] = newEmployee;
+    console.log('New employee created:', newEmployee);
     res.send({ token: newEmployee.token });
   }
 });
 
-// Login an existing user
+
+// Login an existing employee
 apiRouter.post('/auth/login', async (req, res) => {
-  const employee = [req.body.email];
+  console.log('Login request received:', req.body);
+
+  const employee = employees[req.body.email];
+  console.log('Employee data found:', employee);
+
   if (employee && req.body.password === employee.password) {
     employee.token = uuidv4();
-    res.send({ token: user.token });
+    console.log('Login successful:', employee);
+    res.send({ token: employee.token });
     return;
   }
+  
+  console.log('Login failed for:', req.body.email);
   res.status(401).send({ msg: 'Unauthorized' });
 });
 
-// Logout a user
+
+// Logout an employee
 apiRouter.delete('/auth/logout', (req, res) => {
-  const employee = Object.values(employees).find((u) => u.token === req.body.token);
+  const employee = Object.values(employees).find((e) => e.token === req.body.token);
   if (employee) {
     delete employee.token;
   }
@@ -62,18 +84,17 @@ apiRouter.delete('/auth/logout', (req, res) => {
 });
 
 // ==============================
-// Scores Endpoints
+// Time Log Endpoints
 // ==============================
 
-
-// Get scores
+// Get time logs
 apiRouter.get('/time', (req, res) => {
   res.json(times);
 });
 
-// Submit a new score
+// Submit a new time log
 apiRouter.post('/time', (req, res) => {
-  scores = updateScores(req.body, scores);
+  times.push(req.body);
   res.send(times);
 });
 
@@ -93,4 +114,3 @@ app.use((_req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
