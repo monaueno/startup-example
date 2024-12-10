@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, NavLink, Route, Routes, useNavigate } from 'react-router-dom';
 import MyPay from './mypay/mypay';
 import ClockIn from './clockin/clockin';
@@ -24,39 +24,39 @@ function Header({ isAuthenticated, handleLogout }) {
         <div className="navbar-brand">
           <NavLink to="/">TodayPay!</NavLink>
         </div>
-          <div className="navbar-items">
+        <div className="navbar-items">
           <ul style={{ display: 'flex', listStyle: 'none', margin: 0, padding: 0 }}>
-              {isAuthenticated ? (
-                <>
-                  <li style={{ margin: 0, padding: 0 }} >
-                    <NavLink className="nav-link" to="/clockin">
-                      Clock In
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className="nav-link" to="/mypay">
-                      My Pay
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className="nav-link" to="/profile">
-                      Profile
-                    </NavLink>
-                  </li>
-                </>
-              ) : (
-                <li>
-                  <NavLink className="nav-link" to="/">
-                    Log In
+            {isAuthenticated ? (
+              <>
+                <li style={{ margin: 0, padding: 0 }}>
+                  <NavLink className="nav-link" to="/clockin">
+                    Clock In
                   </NavLink>
                 </li>
-              )}
-            </ul>
-            {isAuthenticated && (
-              <button className="logout-button" onClick={onLogoutClick}>
-                Log Out
-              </button>
+                <li>
+                  <NavLink className="nav-link" to="/mypay">
+                    My Pay
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="nav-link" to="/profile">
+                    Profile
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <li>
+                <NavLink className="nav-link" to="/">
+                  Log In
+                </NavLink>
+              </li>
             )}
+          </ul>
+          {isAuthenticated && (
+            <button className="logout-button" onClick={onLogoutClick}>
+              Log Out
+            </button>
+          )}
         </div>
       </nav>
     </header>
@@ -69,6 +69,14 @@ export default function App() {
   const [authState, setAuthState] = useState(
     userName ? AuthState.Authenticated : AuthState.Unauthenticated
   );
+  const [backendMessage, setBackendMessage] = useState('');
+
+  useEffect(() => {
+    fetch('/api/hello')
+      .then((response) => response.json())
+      .then((data) => setBackendMessage(data.message))
+      .catch((error) => console.error('Error fetching backend data:', error));
+  }, []);
 
   const handleAuthChange = (newUserName, newAuthState) => {
     setUserName(newUserName);
@@ -89,6 +97,10 @@ export default function App() {
             isAuthenticated={authState === AuthState.Authenticated}
             handleLogout={() => handleAuthChange('', AuthState.Unauthenticated)}
           />
+
+          <div className="container my-3">
+            <p>{backendMessage}</p>
+          </div>
 
           {/* Routes */}
           <Routes>
