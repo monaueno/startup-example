@@ -10,7 +10,7 @@ let employees = {};
 let times = [];
 
 // The service port. In production, the front-end code is statically hosted by the service on the same port.
-const port = process.argv.length > 2 ? process.argv[2] : 4000;
+const port = process.argv.length > 2 ? process.argv[2] : 8000;
 
 // Initialize the Express app
 const app = express();
