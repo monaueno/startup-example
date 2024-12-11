@@ -1,0 +1,5 @@
+{
+    "mongoUrl": "mongodb+srv://monau:CS260@startup.zcmgh.mongodb.net/?retryWrites=true&w=majority&appName=Startup",
+    "dbName": "TodayPay"
+  }
+  
