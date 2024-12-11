@@ -128,5 +128,14 @@ background-repeat: no-repeat;
   - [x] clockin -  displays the times you clockin and out
   - [x] mypay - logs the amount of money made that shift
   - [x] I tried to make the money reset every day, but it didn't work:(
-- [x] Router: routing between login and timeclock  
+- [x] Router: routing between login and timeclock
+
+## Service deliverable
+I added backend endpoints that receives other employees clockin/out times.
+
+- [x] Node.js/Express HTTP service -done!
+- [x] Static middleware for frontend - done!
+- [x] Calls to third party endpoints - don't have any, but would eventually love to involve payment processing
+- [x] Backend service endpoints - placeholders for login and for time logging
+- [x] Frontend calls service endpoints - I did this using the fetch function  
 
