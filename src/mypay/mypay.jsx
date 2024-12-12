@@ -5,7 +5,7 @@ import './MyPay.css';
 
 export default function MyPay() {
     const navigate = useNavigate();
-    const { calculatePay, clearLogs } = useLogTime();
+    const { calculatePay } = useLogTime();
 
     const { payEntries, totalPay, totalHours } = calculatePay();
 
@@ -32,18 +32,13 @@ export default function MyPay() {
     // Get the earnings for the most recent day
     const mostRecentDayEarnings = sortedGroupedEntries.length > 0 ? sortedGroupedEntries[0].amount : 0;
 
-    // Handle clearing the logs
-    const handleClear = () => {
-        clearLogs();
-    };
-
     return (
         <div>
             <main>
                 <h1>Payroll</h1>
                 <section className="last-entry" aria-label="Last payroll entry">
-                    <h3>Earnings for Most Recent Day</h3>
-                    <h2 className="amount">${mostRecentDayEarnings.toFixed(2)}</h2>
+                <h3>Earnings for Most Recent Day</h3>
+                <h2 className="amount">${mostRecentDayEarnings.toFixed(2)}</h2>
                     <p className="hours">Total Hours Worked: {totalHours}</p>
                 </section>
 
@@ -67,10 +62,6 @@ export default function MyPay() {
                         </tbody>
                     </table>
                 </section>
-
-                <button onClick={handleClear} className="btn btn-danger" style={{ marginTop: '1rem' }}>
-                    Clear Payroll Data
-                </button>
             </main>
         </div>
     );
