@@ -48,7 +48,6 @@ export default function Profile(props) {
                     </button>
                 </div>
                 <div className="dynamic-content">
-                    {activeSection === '' && <p>Click a button to display content here.</p>}
                     {activeSection === 'Settings' && (
                         <div>
                             <h2>Settings</h2>

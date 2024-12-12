@@ -18,20 +18,22 @@ export function Unauthenticated(props) {
 
   async function loginOrCreate(endpoint) {
     const response = await fetch(endpoint, {
-      method: 'post',
-      body: JSON.stringify({ email: userName, password: password }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
+        method: 'post',
+        body: JSON.stringify({ email: userName, password: password }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
     });
     if (response?.status === 200) {
-      localStorage.setItem('userName', userName);
-      props.onLogin(userName);
+        const data = await response.json();
+        localStorage.setItem('userName', data.email); // Store email from the response
+        props.onLogin(data.email);
     } else {
-      const body = await response.json();
-      setDisplayError(`⚠ Error: ${body.msg}`);
+        const body = await response.json();
+        setDisplayError(`⚠ Error: ${body.msg}`);
     }
-  }
+}
+
 
   return (
     <>

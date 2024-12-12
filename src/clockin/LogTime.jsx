@@ -7,22 +7,36 @@ export const LogTimeProvider = ({ children }) => {
         const savedLogs = localStorage.getItem('logs');
         return savedLogs ? JSON.parse(savedLogs) : [];
     });
+
     const hourlyRate = 15;
 
-    const addLog = (action, time) => {
+    const addLog = (employee, action, time) => {
+        const formattedTime = new Date(time).toLocaleString('en-US', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true,
+        });
+
         setLogs((prevLogs) => {
-            const updatedLogs = [...prevLogs, { action, time }];
+            const updatedLogs = [...prevLogs, { employee, action, time: formattedTime }];
+            localStorage.setItem('logs', JSON.stringify(updatedLogs));
+            return updatedLogs;
+        });
+    };
 
-        localStorage.setItem('logs', JSON.stringify(updatedLogs));
-
-        return updatedLogs;
-    });
-};
+    // Function to clear all logs
+    const clearLogs = () => {
+        setLogs([]); // Reset state
+        localStorage.removeItem('logs'); // Clear localStorage
+    };
 
     const calculatePay = () => {
         let totalPay = 0;
         let totalHours = 0;
-
         let lastClockIn = null;
 
         const payEntries = logs.reduce((acc, log) => {
@@ -51,7 +65,7 @@ export const LogTimeProvider = ({ children }) => {
     };
 
     return (
-        <LogContext.Provider value={{ logs, addLog, calculatePay }}>
+        <LogContext.Provider value={{ logs, addLog, clearLogs, calculatePay }}>
             {children}
         </LogContext.Provider>
     );

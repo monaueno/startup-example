@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useLogTime } from './logtime';
 import './timeclock.css';
 
-export function TimeClock({ userName }) {
+export function TimeClock() {
     const [currentTime, setCurrentTime] = useState(new Date());
     const { logs, addLog } = useLogTime();
+    const userName = localStorage.getItem('userName'); // Retrieve the username from localStorage
 
     useEffect(() => {
         const timer = setInterval(() => setCurrentTime(new Date()), 1000);
@@ -12,13 +13,21 @@ export function TimeClock({ userName }) {
     }, []);
 
     const handleClockIn = () => {
+        if (!userName) {
+            alert('User not logged in. Please log in first.');
+            return;
+        }
         const time = currentTime.toLocaleString();
-        addLog('Clock In', time);
+        addLog(userName, 'Clock In', time);
     };
 
     const handleClockOut = () => {
+        if (!userName) {
+            alert('User not logged in. Please log in first.');
+            return;
+        }
         const time = currentTime.toLocaleString();
-        addLog('Clock Out', time);
+        addLog(userName, 'Clock Out', time);
     };
 
     // Sort logs by date and time in descending order (most recent first)
@@ -41,7 +50,9 @@ export function TimeClock({ userName }) {
         <div className="timeclock-container text-center">
             {mostRecentLog && (
                 <div className="recent-log-display">
-                    <h1>You {formatAction(mostRecentLog.action)} at {getTimeOnly(mostRecentLog.time)}</h1>
+                    <h1>
+                        You {formatAction(mostRecentLog.action)} at {getTimeOnly(mostRecentLog.time)}
+                    </h1>
                 </div>
             )}
             <div className="current-time">
