@@ -3,71 +3,87 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import bcrypt from 'bcrypt';
 import { v4 as uuidv4 } from 'uuid';
+import { WebSocketServer } from 'ws';
 import { employeeCollection, timeLogCollection } from './database.js';
 
+
 const authCookieName = 'token';
-const port = 8000;
+const port = process.argv.length > 2 ? process.argv[2] : 8080; // Default port to 8080
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
+app.use(express.static('./public'));
 
 // ==============================
 // Authentication Routes
+// (Your existing authentication routes go here)
 // ==============================
 
-app.post('/api/auth/create', async (req, res) => {
-  const { email, password } = req.body;
-
-  try{
-  const existingEmployee = await employeeCollection.findOne({ email });
-
-  if (existingEmployee) {
-    return res.status(409).send({ msg: 'User already exists' });
-  }
-
-  const hashedPassword = await bcrypt.hash(password, 10);
-  const token = uuidv4();
-  await employeeCollection.insertOne({ email, password: hashedPassword, token });
-
-  res.cookie(authCookieName, token, { httpOnly: true });
-  res.status(201).send({ msg: 'User created' });
-}catch (error){
-  console.error('Error creating user:', error);
-  res.status(500).json({ msg: 'Internal server error'});
-}
-});
-
-
-app.post('/api/auth/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  try{
-  const user = await employeeCollection.findOne({ email });
-
-  if (user && (await bcrypt.compare(password, user.password))) {
-    const token = uuidv4();
-    await employeeCollection.updateOne({ email }, { $set: { token } });
-    res.cookie(authCookieName, token, { httpOnly: true });
-    res.send({ msg: 'Login successful' });
-  } else {
-    res.status(401).send({ msg: 'Invalid credentials' });
-  }
-} catch (error){
-  console.error('Error logging in:', error);
-  res.status(500).json({ msg: 'Internal server error' });
-}
-});
-
-app.delete('/api/auth/logout', (req, res) => {
-  res.clearCookie(authCookieName);
-  res.status(204).end();
-});
-
 // ==============================
-// Start the Server
+// WebSocket Server
 // ==============================
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server running on http://localhost:${port}`);
+const wss = new WebSocketServer({ noServer: true });
+
+const server = app.listen(port, () => {
+console.log(`Server running on http://localhost:${port}`);
 });
+
+// Handle the HTTP->WebSocket upgrade
+server.on('upgrade', (request, socket, head) => {
+wss.handleUpgrade(request, socket, head, function done(ws) {
+wss.emit('connection', ws, request);
+});
+});
+
+// Track connections
+let connections = [];
+let id = 0;
+
+wss.on('connection', (ws) => {
+const connection = { id: ++id, alive: true, ws: ws };
+    connections.push(connection);
+
+  // When a message is received from a client
+  ws.on('message', (data) => {
+    try {
+    const incoming = JSON.parse(data);
+    // Reformat the message to match what the client expects
+        const broadcastData = JSON.stringify({
+          from: incoming.name,
+          name: incoming.name,
+          msg: incoming.msg,
+          });
+      
+          // Broadcast to all clients (including the sender)
+          connections.forEach((c) => {
+          c.ws.send(broadcastData);
+          });
+          } catch (err) {
+          console.error('Error parsing incoming message:', err);
+          }
+      });
+      
+        ws.on('close', () => {
+          connections = connections.filter((c) => c.id !== connection.id);
+        });
+      
+        // Respond to pong messages by marking the connection alive
+        ws.on('pong', () => {
+        connection.alive = true;
+        });
+      });
+      
+      // Keep active connections alive
+      setInterval(() => {
+        connections.forEach((c) => {
+          // Kill any connection that didn't respond to the ping last time
+          if (!c.alive) {
+        c.ws.terminate();
+          } else {
+          c.alive = false;
+          c.ws.ping();
+          }
+        });
+      }, 10000);
