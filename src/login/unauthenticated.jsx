@@ -8,13 +8,12 @@ export function Unauthenticated(props) {
   const [displayError, setDisplayError] = useState(null);
 
   async function loginUser() {
-    loginOrCreate('http://localhost:8080/api/auth/login');
+    loginOrCreate('/api/auth/login');
 
   }
 
   async function createUser() {
-    loginOrCreate('http://localhost:8080/api/auth/create');
-
+    loginOrCreate('/api/auth/create');
   }
 
   async function loginOrCreate(endpoint) {
