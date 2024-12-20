@@ -9,10 +9,11 @@ export default function Login({ userName, authState, onAuthChange }) {
   const [error, setError] = useState(null);
   const city = 'New York'; // Set your default city here
 
+  // Fetch the weather data inside useEffect
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/weather?city=${city}`);
+        const response = await fetch(`/api/weather?city=${city}`);
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
@@ -24,7 +25,7 @@ export default function Login({ userName, authState, onAuthChange }) {
     };
 
     fetchWeather();
-  }, [city]);
+  }, [city]); // Runs when 'city' changes
 
   return (
     <main className="login-page">
