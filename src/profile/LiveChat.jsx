@@ -1,4 +1,3 @@
-// LiveChat.js
 import React, { useState, useEffect } from 'react';
 
 export default function LiveChat() {
@@ -7,63 +6,56 @@ export default function LiveChat() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
 
-  // Function to append a new message to the chat window
   const appendMessage = (cls, from, msg) => {
     setMessages((prev) => [...prev, { cls, from, msg }]);
   };
 
-  // Establish WebSocket connection on component mount
   useEffect(() => {
-    // Determine ws or wss based on the current protocol
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    const wsUrl = `${protocol}://localhost:8000`;
+    const wsUrl = `${protocol}://localhost:8080`;
 
     const ws = new WebSocket(wsUrl);
 
-    ws.onopen = () => {
-      appendMessage('system', 'websocket', 'connected');
-    };
-
-    ws.onmessage = async (event) => {
-      const text = await event.data.text();
+    ws.onopen = () => appendMessage('system', 'websocket', 'connected');
+    ws.onmessage = (event) => {
       try {
-        const chat = JSON.parse(text);
-        appendMessage(chat.from, chat.name, chat.msg);
+        const data = JSON.parse(event.data);
+        if (data.type === 'history') {
+          data.messages.forEach((msg) => appendMessage('other', msg.from, msg.msg));
+        } else {
+          appendMessage('other', data.from, data.msg);
+        }
       } catch (err) {
         console.error('Error parsing message:', err);
       }
     };
-
-    ws.onclose = () => {
-      appendMessage('system', 'websocket', 'disconnected');
-    };
-
-    ws.onerror = (error) => {
-      console.error('WebSocket error:', error);
-    };
+    ws.onclose = () => appendMessage('system', 'websocket', 'disconnected');
+    ws.onerror = (error) => console.error('WebSocket error:', error);
 
     setSocket(ws);
 
-    // Cleanup on component unmount
-    return () => {
-      ws.close();
-    };
+    return () => ws.close();
   }, []);
 
   const sendMessage = () => {
     const trimmedMsg = message.trim();
-    if (trimmedMsg && name && socket && socket.readyState === WebSocket.OPEN) {
-      // Display your own message immediately
-      appendMessage('me', name, trimmedMsg);
 
-      // Send message to the server
-      const data = { name, msg: trimmedMsg };
-      socket.send(JSON.stringify(data));
-
-      // Clear the message input
-      setMessage('');
-    } else if (!name) {
+    if (!name.trim()) {
       alert('Please enter your name before sending a message.');
+      return;
+    }
+
+    if (!trimmedMsg) {
+      alert('Message cannot be empty.');
+      return;
+    }
+
+    if (socket && socket.readyState === WebSocket.OPEN) {
+      appendMessage('me', name, trimmedMsg);
+      socket.send(JSON.stringify({ name, msg: trimmedMsg }));
+      setMessage('');
+    } else {
+      alert('WebSocket is not connected.');
     }
   };
 
@@ -77,7 +69,6 @@ export default function LiveChat() {
           onChange={(e) => setName(e.target.value)}
         />
       </div>
-
       <div
         id="chat-window"
         style={{
@@ -86,7 +77,7 @@ export default function LiveChat() {
           border: '1px solid #ccc',
           overflowY: 'auto',
           marginBottom: '10px',
-          padding: '10px'
+          padding: '10px',
         }}
       >
         {messages.map((m, idx) => (
@@ -95,7 +86,6 @@ export default function LiveChat() {
           </div>
         ))}
       </div>
-
       <input
         id="new-msg"
         type="text"

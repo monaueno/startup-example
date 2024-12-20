@@ -3,7 +3,7 @@ import React from 'react';
 import { Workers } from './workers.jsx';
 import { TimeClock } from './timeclock.jsx'
 import { LogTimeProvider } from './logtime.jsx';
-import './ClockIn.css'
+import './clockin.css'
 
 export default function ClockIn(props) {
     return (

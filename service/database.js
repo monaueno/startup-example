@@ -1,7 +1,9 @@
 import { MongoClient } from 'mongodb';
 import bcrypt from 'bcrypt';
 import { v4 as uuidv4 } from 'uuid';
-import config from './dbConfig.json' assert { type: 'json'};
+import config from './dbConfig.json' assert { type: 'json' };
+
+
 
 // MongoDB Connection
 const url = config.mongoUrl;
@@ -11,7 +13,6 @@ const employeeCollection = db.collection('Employees');
 const timeLogCollection = db.collection('TimeLogs');
 
 export { employeeCollection, timeLogCollection };
-
 // ==============================
 // Test Database Connection
 // ==============================

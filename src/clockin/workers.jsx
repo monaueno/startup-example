@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLogTime } from './logtime';
 import './workers.css';
 
 export function Workers() {
     const { logs, clearLogs } = useLogTime();
+    const [loading, setLoading] = useState(true); 
+    const [error, setError] = useState(null);   
+    const [fetchedLogs, setLogs] = useState([]);
+
+    useEffect(() => {
+    const fetchLogs = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/api/logs'); // Adjust the URL to match your backend endpoint
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        setLogs(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLogs();
+  }, []);
+
 
     // Sort logs so the most recent log is first
     const sortedLogs = [...logs].sort((a, b) => new Date(b.time) - new Date(a.time));
