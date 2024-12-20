@@ -1,11 +1,3 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 # TodayPay! by Mona Ueno
 
 ## Elevator Pitch
@@ -147,3 +139,18 @@ I added backend endpoints that receives other employees clockin/out times.
 - [x] Backend service endpoints - placeholders for login and for time logging
 - [x] Frontend calls service endpoints - I did this using the fetch function  
 
+## DB/Login deliverable
+I associated the login with who clocked in/out. 
+- [x] MongoDB Atlas database created - done!
+- [x] Stores data in MongoDB - done!
+- [x] User registration - Creates a new account in the database
+- [x] existing user - creates a new account in the database
+- [x] use mongoDB to store credentials - stores both user and their action
+- [x] restricts functionality - you cannot clock in until you have logged int
+
+## WebSocket deliverable
+I used webSocket to make messages among the users possible.
+- [x] Backend listens for websocket connection - done!
+- [x] Frontend makes websocket connection - done!
+- [x] Data sent over websocket connection - done!
+- [x] Websocket data displayed - displays communication in realtime  
